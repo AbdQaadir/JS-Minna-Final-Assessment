@@ -1,0 +1,236 @@
+:root {
+  --primary: #ff8e71;
+  --secondary: #ffba93;
+  --tertiary: #9f5f80;
+  --supplementary: #4e8d7c;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Arimo", sans-serif;
+  margin: 0;
+}
+* {
+  font-family: "Arimo", sans-serif;
+  box-sizing: border-box;
+}
+
+header {
+  background: var(--supplementary);
+  margin-bottom: 40px;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 30px;
+  align-items: center;
+}
+header nav .toggler {
+  padding: 0 10px;
+  font-size: 20px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  display: none;
+  cursor: pointer;
+}
+header nav a {
+  color: #fff;
+  font-size: 30px;
+}
+header nav ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+header nav ul li a {
+  color: #fff;
+  font-size: 19px;
+  padding: 20px;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: 0.15s;
+}
+header nav ul li a.active,
+header nav ul li a:hover {
+  opacity: 0.9;
+}
+
+#mobile-nav {
+  margin-left: -100vw;
+  position: fixed;
+  z-index: 999999999999999999999999;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 40px 20px;
+  transition: 0.3s;
+}
+#mobile-nav.active {
+  margin: 0;
+}
+#mobile-nav .close {
+  font-size: 23px;
+  color: var(--primary);
+  font-weight: 700;
+  position: absolute;
+  top: 40px;
+  right: 40px;
+}
+#mobile-nav a.brand {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 700;
+  text-decoration: none;
+}
+#mobile-nav ul {
+  padding: 0;
+  list-style: none;
+}
+#mobile-nav ul li {
+  margin: 20px 0;
+}
+#mobile-nav ul li a {
+  color: var(--secondary);
+  text-decoration: none;
+}
+/* MAIN */
+
+main form {
+  width: 500px;
+  margin: 30px auto;
+  border: 1px solid rgba(0, 0, 0, 0.35);
+  padding: 30px 20px;
+}
+
+main form .form-row {
+  width: 90%;
+  margin: 15px auto;
+}
+main form .form-row label {
+  display: block;
+}
+main form .form-row input,
+main form .form-row select {
+  width: 100%;
+  padding: 10px;
+  margin: 3px 0 10px 0;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  font-size: 17px;
+}
+main form input[type="submit"] {
+  text-align: center;
+  padding: 13px 50px;
+  font-size: 18px;
+  margin: 0 auto;
+  display: block;
+  background: var(--supplementary);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.error {
+  color: red;
+  text-align: center;
+  display: block;
+  margin: 10px;
+}
+
+@media screen and (max-width: 500px) {
+  header nav ul {
+    display: none;
+  }
+  header nav .toggler {
+    display: block;
+  }
+  main form {
+    width: 90%;
+  }
+}
+
+/* STORE */
+#store-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+}
+#store-header #filter-form select {
+  width: 230px;
+  padding: 10px 14px;
+  font-size: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: #fff;
+}
+#store-header #filter-form input[type="submit"] {
+  text-align: center;
+  padding: 8px 50px;
+  font-size: 18px;
+  display: block;
+  background: var(--supplementary);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+#table-wrapper {
+  width: 90%;
+  overflow-x: scroll;
+  margin: 20px auto;
+}
+#store-table {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 0;
+}
+#store-table thead {
+  background-color: var(--primary);
+}
+#store-table tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  vertical-align: top;
+}
+#store-table th,
+#store-table td {
+  text-align: left;
+  padding: 10px;
+}
+#store-table th:nth-child(1),
+#store-table td:nth-child(1) {
+  width: 5%;
+  border-right: 1px solid rgba(0, 0, 0, 0.15);
+}
+#store-table th:nth-child(2),
+#store-table td:nth-child(2) {
+  width: 15%;
+  border-right: 1px solid rgba(0, 0, 0, 0.15);
+}
+#store-table th:nth-child(3),
+#store-table td:nth-child(3) {
+  width: 15%;
+  border-right: 1px solid rgba(0, 0, 0, 0.15);
+}
+#store-table th:nth-child(4),
+#store-table td:nth-child(4) {
+  width: 15%;
+  border-right: 1px solid rgba(0, 0, 0, 0.15);
+}
+#store-table th:nth-child(5),
+#store-table td:nth-child(5) {
+  width: 60%;
+}
+
+@media screen and (max-width: 500px) {
+  #store-table th,
+  #store-table td {
+    font-size: 12px;
+  }
+}
