@@ -8,11 +8,11 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  font-family: "Arimo", sans-serif;
+  font-family: "Be Vietnam", sans-serif;
   margin: 0;
 }
 * {
-  font-family: "Arimo", sans-serif;
+  font-family: "Be Vietnam", sans-serif;
   box-sizing: border-box;
 }
 
@@ -118,8 +118,8 @@ main form .form-row label {
 main form .form-row input,
 main form .form-row select {
   width: 100%;
-  padding: 10px;
-  margin: 3px 0 10px 0;
+  padding: 7px 10px;
+  margin: 3px 0 8px 0;
   border: 1px solid rgba(0, 0, 0, 0.15);
   font-size: 17px;
 }
@@ -194,14 +194,15 @@ main form input[type="submit"] {
 #store-table thead {
   background-color: var(--primary);
 }
-#store-table tr {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+#store-table tbody td {
+  padding: 20px 2px;
   vertical-align: top;
+  border-bottom: 6px solid rgba(0, 0, 0, 0.15) !important;
 }
 #store-table th,
 #store-table td {
   text-align: left;
-  padding: 10px;
+  padding: 20px 10px;
 }
 #store-table th:nth-child(1),
 #store-table td:nth-child(1) {

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.gstatic.com"> 
-    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/styles/style.css">
@@ -44,7 +44,6 @@
                     <option value="grocery">Grocery</option>
                 </select>
             </div>
-            <p class="error"></p>
             <input type="submit" value="Filter">
         </form>
 
@@ -65,17 +64,17 @@
                 </tr>
             </thead>
             <tbody id="store-table-body">
-                <tr>
-                    <td>1</td>
-                    <td>Cocoa Butter</td>
-                    <td>A butter cream for replenishing the skin</td>
-                    <td>Self Care</td>
-                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ipsum quis obcaecati sit assumenda et officiis esse nemo dolore unde adipisci error quisquam blanditiis, quo sapiente, architecto animi maxime eum.</td>
-                </tr>
             </tbody>
         </table>
+        <p class="error" style="text-align: center;"></p>
     </div>
 
+    <script>
+        const user = JSON.parse(sessionStorage.getItem("user"));
+        if(!user){
+            window.location.href = "/login.html";
+        }
+    </script>
 
     <script src="../assets/scripts/script.js"></script>
 </body>
