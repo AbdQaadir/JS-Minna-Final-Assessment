@@ -8,19 +8,24 @@ const BASE_URL = "https://jsminnastore.herokuapp.com/";
 const mobileNav = document.querySelector("#mobile-nav");
 
 // UTILITIES
-const setError = (elem, message) => {
-  document.querySelector(elem).innerHTML = message;
+const setError = (message) => {
+  document.querySelector(".error").innerHTML = message;
   setTimeout(() => {
-    document.querySelector(elem).innerHTML = "";
+    document.querySelector(".error").innerHTML = "";
   }, 3000);
 };
 
 const saveUserToSessionStorage = (data) => {
   sessionStorage.setItem("user", JSON.stringify(data));
 
-  window.location.href = "/store";
+  window.location.href = "/store/index.html";
 };
 
+const handleLogout = () => {
+  sessionStorage.clear();
+
+  window.location.href = "/login.html";
+};
 const getUserDetails = () => {
   const user = JSON.parse(sessionStorage.getItem("user"));
   return user;
@@ -64,10 +69,10 @@ const SuggestItem = (e) => {
       .then((res) => res.json())
       .then((data) => {
         if (data.success === true) {
-          setError(".error", data.payload.message);
+          setError(data.payload.message);
           SuggestForm.reset();
         } else {
-          setError(".error", data.message);
+          setError(data.message);
         }
       })
       .catch((err) => console.log(err.message));
@@ -94,12 +99,12 @@ const FilterItems = (e) => {
         if (data.success === true) {
           populateStoreTable(data.payload.result);
         } else {
-          setError(".error", data.message);
+          setError(data.message);
         }
       })
-      .catch((err) => console.log(err.message));
+      .catch((err) => setError(err.message));
   } catch (err) {
-    console.log(err.message);
+    setError(err.message);
   }
 };
 
@@ -121,7 +126,7 @@ const FetchAllData = () => {
         if (data.success === true) {
           populateStoreTable(data.payload.result);
         } else {
-          setError(".error", data.message);
+          setError(data.message);
         }
       })
       .catch((err) => console.log(err.message));
@@ -158,7 +163,7 @@ const Signup = (e) => {
       .then((res) => res.json())
       .then((data) => {
         if (data.success === false) {
-          setError(".error", data.message);
+          setError(data.message);
         } else {
           const {
             fullName,
@@ -181,9 +186,9 @@ const Signup = (e) => {
           saveUserToSessionStorage(newUser);
         }
       })
-      .catch((err) => setError(".error", data.message));
+      .catch((err) => setError(data.message));
   } catch (err) {
-    setError(".error", data.message);
+    setError(data.message);
   }
 };
 
@@ -202,7 +207,7 @@ const Login = (e) => {
       .then((res) => res.json())
       .then((data) => {
         if (data.success === false) {
-          setError(".error", data.message);
+          setError(data.message);
         } else {
           const {
             fullName,
@@ -226,7 +231,7 @@ const Login = (e) => {
       })
       .catch((err) => console.log({ err }));
   } catch (err) {
-    setError(".error", err.message || "Something went wrong...");
+    setError(err.message || "Something went wrong...");
   }
 };
 

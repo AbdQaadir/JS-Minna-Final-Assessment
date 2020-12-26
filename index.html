@@ -13,7 +13,9 @@
 <body>
     <header>
         <nav>
-            <a href="" class="brand">Logo</a>
+            <a href="" class="brand">
+                <img src="./assets/images/logo.svg" alt="Logo">
+            </a>
             <ul>
                 <li><a href="">Home</a></li>
                 <li><a href="./login.html">Login</a></li>
@@ -26,7 +28,9 @@
 
     <div id="mobile-nav">
         <span class="close" onclick="ToggleNav()">X</span>
-        <a href="" class="brand">Logo</a>
+        <a href="" class="brand">
+            <img src="./assets/images/logo.svg" alt="Logo">
+        </a>
         <ul>
             <li><a href="">Home</a></li>
             <li><a href="./login.html">Login</a></li>
@@ -34,15 +38,23 @@
         </ul>
     </div>
 
-    <main>
+    <main id="index-main">
         <div>
-            <h1>Welcome to our Movie Suggestion</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam dolores quos praesentium repellendus vitae. Facilis molestiae, ducimus mollitia voluptatum autem ea nemo iste totam? Aliquid expedita dolorem molestias porro voluptates!</p>
+            <h1>Movie Suggestion App</h1>
+            <p>This is a store suggestion application with authentication features and <br> protected route implementation amongst other features.</p>
+            <p>Built with love by Lateef Quadri as the Final Assessment for JSMinna Internship</p>
 
-            <a href="./login.html">Login</a>
-            <a href="./signup.html">Sign up</a>
+            Sign up or Login to start suggesting items to the store.
+
+            <div class="buttons">
+                <a href="./login.html">Login</a>
+                <a href="./signup.html">Sign up</a>
+            </div>
+            
         </div>
     </main>
+    
+
 
     <script src="./assets/scripts/script.js"></script>
 </body>

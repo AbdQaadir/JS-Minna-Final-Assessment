@@ -13,11 +13,12 @@
 <body  onload="FetchAllData()">
     <header>
         <nav>
-            <a href="../index.html" class="brand">Logo</a>
+            <a href="../index.html" class="brand">
+                <img src="../assets/images/logo.svg" alt="Logo">
+            </a>
             <ul>
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="../login.html">Login</a></li>
-                <li><a href="../signup.html">Sign Up</a></li>
+                <li><a onclick="handleLogout()">Logout</a></li>
             </ul>
             <button class="toggler" onclick="ToggleNav()"><i class="fas fa-bars"></i></button>
         </nav>
@@ -26,11 +27,12 @@
 
     <div id="mobile-nav">
         <span class="close" onclick="ToggleNav()">X</span>
-        <a href="../index.html" class="brand">Logo</a>
+        <a href="../index.html" class="brand">
+            <img src="../assets/images/logo.svg" alt="Logo">
+        </a>
         <ul>
             <li><a href="../index.html">Home</a></li>
-            <li><a href="../login.html">Login</a></li>
-            <li><a href="../signup.html">Sign Up</a></li>
+            <li><a onclick="handleLogout()">Logout</a></li>
         </ul>
     </div>
 

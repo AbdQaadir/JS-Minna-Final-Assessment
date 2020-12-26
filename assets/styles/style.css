@@ -40,10 +40,12 @@ header nav .toggler {
 header nav a {
   color: #fff;
   font-size: 30px;
+  cursor: pointer;
 }
 header nav ul {
   padding: 0;
   list-style: none;
+  text-align: right;
   display: flex;
 }
 
@@ -100,7 +102,30 @@ header nav ul li a:hover {
   text-decoration: none;
 }
 /* MAIN */
+#index-main {
+  text-align: center;
+  padding: 40px 10px;
+}
 
+#index-main .buttons {
+  margin: 30px 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#index-main .buttons a {
+  width: 180px;
+  padding: 8px 30px;
+  background-color: var(--supplementary);
+  color: #fff;
+  border-radius: 10px;
+  margin: 10px;
+  text-decoration: none;
+  transition: 0.3s ease-out;
+}
+#index-main .buttons a:hover {
+  box-shadow: 1px 3px 10px 3px rgba(0, 0, 0, 0.15);
+}
 main form {
   width: 500px;
   margin: 30px auto;
