@@ -20,7 +20,9 @@ header {
   background: var(--supplementary);
   margin-bottom: 40px;
 }
-
+header img {
+  width: 100px;
+}
 header nav {
   display: flex;
   justify-content: space-between;
